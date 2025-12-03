@@ -1,0 +1,162 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: #000;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+#canvas-container {
+    width: 100vw;
+    height: 100vh;
+    display: block;
+}
+
+/* --- UI Layer --- */
+#ui-layer {
+    position: absolute;
+    bottom: 40px; 
+    left: 0;
+    width: 100%;
+    text-align: center;
+    pointer-events: none;
+    color: #ffffff;
+    z-index: 10;
+    text-shadow: 0 0 10px #000;
+    transition: opacity 0.5s ease;
+    padding: 0 10px;
+    box-sizing: border-box;
+    opacity: 0; 
+}
+
+#planet-name {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin: 0;
+    color: #ffcc00;
+    text-shadow: 0 0 20px rgba(255, 160, 0, 0.6);
+    /* Added transition for smooth spacing change when switching languages */
+    transition: letter-spacing 0.3s ease;
+}
+
+#planet-type {
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #aaa;
+    margin-bottom: 5px;
+    display: block;
+    letter-spacing: 2px;
+    /* Added transition here too */
+    transition: letter-spacing 0.3s ease;
+}
+
+/* --- Restart Button --- */
+#restart-game-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    z-index: 20;
+    pointer-events: auto;
+    backdrop-filter: blur(5px);
+    display: none; 
+    transition: background 0.3s;
+}
+#restart-game-btn:hover { background: rgba(255, 255, 255, 0.25); }
+
+/* --- Start Screen --- */
+#start-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    color: white;
+    text-align: center;
+}
+
+#loader {
+    font-size: 1.2rem;
+    color: #00aaff;
+    margin-bottom: 20px;
+    font-family: monospace;
+    animation: pulse 1s infinite;
+    padding: 0 20px;
+}
+
+#start-content {
+    display: none; 
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    font-size: 3rem; 
+    margin: 0; 
+    letter-spacing: 5px;
+}
+
+.subtitle {
+    color: #aaa; 
+    margin-top: 5px; 
+    text-transform: uppercase; 
+    letter-spacing: 2px;
+}
+
+.intro-text {
+    opacity: 0.8; 
+    font-size: 0.9rem; 
+    margin-top: 30px; 
+    line-height: 1.6;
+    max-width: 80%;
+}
+
+#start-btn {
+    background: linear-gradient(135deg, #ffaa00, #ff5500);
+    color: #fff;
+    border: none;
+    padding: 18px 60px;
+    font-size: 1.5rem;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 30px;
+    box-shadow: 0 0 40px rgba(255, 100, 0, 0.5);
+    pointer-events: auto;
+    transition: transform 0.2s;
+}
+#start-btn:active { transform: scale(0.95); }
+
+#instructions {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.9rem;
+    pointer-events: none;
+    z-index: 5;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1.6;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+}
+
+@keyframes pulse { 0% { opacity: 0.6; } 50% { opacity: 1; } 100% { opacity: 0.6; } }
+

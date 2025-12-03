@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Solar System Odyssey 3D - Ultra Realistic</title>
+    
+    <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Load Three.js Library -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+</head>
+<body>
+
+    <!-- Game Container -->
+    <div id="canvas-container"></div>
+    
+    <!-- UI Elements -->
+    <button id="restart-game-btn" onclick="window.resetGame()">↻ RESTART</button>
+    <div id="instructions">
+        Swipe Down (1 Finger) to Explore<br>
+        Swipe Down (2 Fingers) for Hindi/English
+    </div>
+    
+    <div id="ui-layer">
+        <span id="planet-type">Star Type</span>
+        <h1 id="planet-name">THE SUN</h1>
+    </div>
+
+    <!-- Loading / Start Screen -->
+    <div id="start-screen">
+        <div id="loader">Generating Planetary Surfaces...</div>
+        <div id="start-content">
+            <h1 class="title">ODYSSEY</h1>
+            <p class="subtitle">Realistic Solar System</p>
+            <p class="intro-text">
+                Turn up your volume.<br>
+                1 Finger Swipe: Travel<br>
+                2 Finger Swipe: Hindi/English
+            </p>
+            <button id="start-btn" onclick="window.tryStartGame()">START JOURNEY</button>
+        </div>
+    </div>
+
+    <!-- Link to your JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>
+
+
